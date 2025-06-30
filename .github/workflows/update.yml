@@ -3,23 +3,24 @@ name: Update
 on:
   schedule:
     - cron: '30 2 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: true
-      - name: Git Sumbodule Update
+      - name: Git Submodule Update
         run: |
           git pull --recurse-submodules
           git submodule update --remote --recursive
       - name: Commit update
         run: |
-          git config --global user.name 'zenyfish'
-          git config --global user.email 'zenyfish@users.noreply.github.com'
+          git config --global user.name 'zengin-code-bot'
+          git config --global user.email 'zengin-code-bot@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
