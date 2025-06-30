@@ -6,17 +6,17 @@
 
 ## API エンドポイント
 
-- **全金融機関一覧**: https://zengin-code.github.io/api/banks.json
-- **特定金融機関の支店一覧**: https://zengin-code.github.io/api/branches/{金融機関コード}.json
+- **全金融機関一覧**: https://sonicgarden.github.io/zengin-code.github.io/api/banks.json
+- **特定金融機関の支店一覧**: https://sonicgarden.github.io/zengin-code.github.io/api/branches/{金融機関コード}.json
 
 ## 使用例
 
 ```bash
 # 全金融機関一覧
-curl https://zengin-code.github.io/api/banks.json
+curl https://sonicgarden.github.io/zengin-code.github.io/api/banks.json
 
 # みずほ銀行（0001）の支店一覧
-curl https://zengin-code.github.io/api/branches/0001.json
+curl https://sonicgarden.github.io/zengin-code.github.io/api/branches/0001.json
 ```
 
 ## データ形式
